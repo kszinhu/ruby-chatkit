@@ -460,4 +460,400 @@ http_interactions:
           }
         }
   recorded_at: Tue, 18 Nov 2025 11:06:52 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chatkit/sessions
+    body:
+      encoding: UTF-8
+      string: '{"user":"<USER_ID>","workflow":{"id":"<WORKFLOW_ID>","state_variables":{"variable1":"value1","variable2":"value2"},"tracing":{},"version":"1.0.0"},"chatkit_configuration":{"automatic_thread_titling":{},"file_upload":{},"history":{}},"rate_limits":{}}'
+    headers:
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Openai-Beta:
+      - chatkit_beta=v1
+      Connection:
+      - Keep-Alive
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 09:42:45 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '240'
+      Connection:
+      - keep-alive
+      Www-Authenticate:
+      - Bearer realm="OpenAI API"
+      Openai-Processing-Ms:
+      - '33'
+      Openai-Version:
+      - '2020-10-01'
+      X-Envoy-Upstream-Service-Time:
+      - '35'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a0ec2629a8c4b4c-GRU
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Incorrect API key provided: <OPENAI_API_KEY>. You can find your API key at https://platform.openai.com/account/api-keys.",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": "invalid_api_key"
+          }
+        }
+  recorded_at: Wed, 19 Nov 2025 09:42:45 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chatkit/sessions
+    body:
+      encoding: UTF-8
+      string: '{"user":"<USER_ID>","workflow":{"id":"<WORKFLOW_ID>","state_variables":{"variable1":"value1","variable2":"value2"},"tracing":{},"version":"1.0.0"},"chatkit_configuration":{"automatic_thread_titling":{},"file_upload":{},"history":{}},"rate_limits":{}}'
+    headers:
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Openai-Beta:
+      - chatkit_beta=v1
+      Connection:
+      - Keep-Alive
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 10:08:45 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '240'
+      Connection:
+      - keep-alive
+      Www-Authenticate:
+      - Bearer realm="OpenAI API"
+      Openai-Processing-Ms:
+      - '36'
+      Openai-Version:
+      - '2020-10-01'
+      X-Envoy-Upstream-Service-Time:
+      - '39'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a0ee87d7855a463-GRU
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Incorrect API key provided: <OPENAI_API_KEY>. You can find your API key at https://platform.openai.com/account/api-keys.",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": "invalid_api_key"
+          }
+        }
+  recorded_at: Wed, 19 Nov 2025 10:08:45 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chatkit/sessions
+    body:
+      encoding: UTF-8
+      string: '{"user":"<USER_ID>","workflow":{"id":"<WORKFLOW_ID>","state_variables":{"variable1":"value1","variable2":"value2"},"tracing":{},"version":"1.0.0"},"chatkit_configuration":{"automatic_thread_titling":{},"file_upload":{},"history":{}},"rate_limits":{}}'
+    headers:
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Openai-Beta:
+      - chatkit_beta=v1
+      Connection:
+      - Keep-Alive
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 12:15:13 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '240'
+      Connection:
+      - keep-alive
+      Www-Authenticate:
+      - Bearer realm="OpenAI API"
+      Openai-Processing-Ms:
+      - '42'
+      Openai-Version:
+      - '2020-10-01'
+      X-Envoy-Upstream-Service-Time:
+      - '43'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a0fa1bb8df3fc31-GRU
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Incorrect API key provided: <OPENAI_API_KEY>. You can find your API key at https://platform.openai.com/account/api-keys.",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": "invalid_api_key"
+          }
+        }
+  recorded_at: Wed, 19 Nov 2025 12:15:13 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chatkit/sessions
+    body:
+      encoding: UTF-8
+      string: '{"user":"<USER_ID>","workflow":{"id":"<WORKFLOW_ID>","state_variables":{"variable1":"value1","variable2":"value2"},"tracing":{},"version":"1.0.0"},"chatkit_configuration":{"automatic_thread_titling":{},"file_upload":{},"history":{}},"rate_limits":{}}'
+    headers:
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Openai-Beta:
+      - chatkit_beta=v1
+      Connection:
+      - Keep-Alive
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 12:17:28 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '240'
+      Connection:
+      - keep-alive
+      Www-Authenticate:
+      - Bearer realm="OpenAI API"
+      Openai-Processing-Ms:
+      - '31'
+      Openai-Version:
+      - '2020-10-01'
+      X-Envoy-Upstream-Service-Time:
+      - '32'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a0fa508cff38913-GRU
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Incorrect API key provided: <OPENAI_API_KEY>. You can find your API key at https://platform.openai.com/account/api-keys.",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": "invalid_api_key"
+          }
+        }
+  recorded_at: Wed, 19 Nov 2025 12:17:28 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chatkit/sessions
+    body:
+      encoding: UTF-8
+      string: '{"user":"<USER_ID>","workflow":{"id":"<WORKFLOW_ID>","state_variables":{"variable1":"value1","variable2":"value2"},"tracing":{},"version":"1.0.0"},"chatkit_configuration":{"automatic_thread_titling":{},"file_upload":{},"history":{}},"rate_limits":{}}'
+    headers:
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Openai-Beta:
+      - chatkit_beta=v1
+      Connection:
+      - Keep-Alive
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 12:41:24 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '240'
+      Connection:
+      - keep-alive
+      Www-Authenticate:
+      - Bearer realm="OpenAI API"
+      Openai-Processing-Ms:
+      - '25'
+      Openai-Version:
+      - '2020-10-01'
+      X-Envoy-Upstream-Service-Time:
+      - '26'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a0fc819e850cd6d-GRU
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Incorrect API key provided: <OPENAI_API_KEY>. You can find your API key at https://platform.openai.com/account/api-keys.",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": "invalid_api_key"
+          }
+        }
+  recorded_at: Wed, 19 Nov 2025 12:41:24 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chatkit/sessions
+    body:
+      encoding: UTF-8
+      string: '{"user":"<USER_ID>","workflow":{"id":"<WORKFLOW_ID>","state_variables":{"variable1":"value1","variable2":"value2"},"tracing":{},"version":"1.0.0"},"chatkit_configuration":{"automatic_thread_titling":{},"file_upload":{},"history":{}},"rate_limits":{}}'
+    headers:
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Openai-Beta:
+      - chatkit_beta=v1
+      Connection:
+      - Keep-Alive
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 13:21:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '240'
+      Connection:
+      - keep-alive
+      Www-Authenticate:
+      - Bearer realm="OpenAI API"
+      Openai-Processing-Ms:
+      - '50'
+      Openai-Version:
+      - '2020-10-01'
+      X-Envoy-Upstream-Service-Time:
+      - '51'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a1003133d3f1ced-GRU
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Incorrect API key provided: <OPENAI_API_KEY>. You can find your API key at https://platform.openai.com/account/api-keys.",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": "invalid_api_key"
+          }
+        }
+  recorded_at: Wed, 19 Nov 2025 13:21:40 GMT
 recorded_with: VCR 6.3.1
