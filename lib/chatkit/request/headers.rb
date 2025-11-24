@@ -19,7 +19,15 @@ module ChatKit
         "OpenAI-Beta" => "chatkit_beta=v1",
       }.freeze
 
+      FILES = {
+        "Accept" => "*/*",
+      }.freeze
+
       class << self
+        # Dynamically define methods for each header constant
+        # e.g., conversation_header, sessions_header, files_header
+        #
+        # @return [Hash] The corresponding header hash
         ChatKit::Request::Headers.constants.each do |const_name|
           define_method "#{const_name.downcase}_header" do
             ChatKit::Request::Headers.const_get(const_name)
