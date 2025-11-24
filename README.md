@@ -82,24 +82,65 @@ puts response.text
 
 ### Advanced Session Configuration
 
+You can customize session behavior with additional configuration options:
+
 ```ruby
 client.create_session!(
   user_id: "user_123",
   workflow_id: "wf_your_workflow_id",
   chatkit_configuration: {
-    history: { enabled: true },
-    file_upload: { enabled: true },
-    automatic_thread_titling: { enabled: true }
+    # Chat history retention
+    history: {
+      enabled: true,           # Enable conversation history (default: true)
+      recent_threads: 10       # Number of recent threads to keep (default: nil - unlimited)
+    },
+    # File upload settings
+    file_upload: {
+      enabled: true,           # Allow file uploads (default: false)
+      max_file_size: 512,      # Maximum file size in MB (default: 512)
+      max_files: 10            # Maximum number of files per message (default: 10)
+    },
+    # Automatic thread titling
+    automatic_thread_titling: {
+      enabled: true            # Auto-generate thread titles (default: true)
+    }
   },
+  # Session expiration
   expires_after: {
-    anchor: "creation",
-    seconds: 3600
+    anchor: "creation",        # Base timestamp: "creation" or "last_activity"
+    seconds: 3600              # Session lifetime in seconds (default: 600 - 10 minutes)
   },
+  # Rate limiting
   rate_limits: {
-    max_requests_per_1_minute: 100
+    max_requests_per_1_minute: 100  # Max requests per minute (default: 10)
   }
 )
 ```
+
+**Configuration Options:**
+
+- **history**: Controls conversation history retention
+
+  - `enabled`: Whether to retain chat history (default: `true`)
+  - `recent_threads`: Limit the number of recent threads kept (default: `nil` - unlimited)
+
+- **file_upload**: Controls file upload capabilities
+
+  - `enabled`: Allow file uploads in conversations (default: `false`)
+  - `max_file_size`: Maximum file size in MB (default: `512`)
+  - `max_files`: Maximum number of files per message (default: `10`)
+
+- **automatic_thread_titling**: Automatically generate descriptive thread titles
+
+  - `enabled`: Enable auto-titling (default: `true`)
+
+- **expires_after**: Session expiration settings
+
+  - `anchor`: Base timestamp - `"creation"` (session created) or `"last_activity"` (last request)
+  - `seconds`: Time in seconds until session expires (default: `600` - 10 minutes)
+
+- **rate_limits**: Request rate limiting
+  - `max_requests_per_1_minute`: Maximum API requests per minute (default: `10`)
 
 ### Manual Session and Conversation Management
 
