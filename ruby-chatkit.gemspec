@@ -8,17 +8,15 @@ Gem::Specification.new do |spec|
   spec.authors = ["Raniery"]
   spec.email = ["raniery@saleszera.com"]
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.summary = "Ruby client library for OpenAI's ChatKit API"
+  spec.description = "A Ruby abstraction of OpenAI's ChatKit JavaScript library, providing easy-to-use interfaces for creating sessions, sending messages, and uploading files to ChatKit conversations."
+  spec.homepage = "https://github.com/saleszera/ruby-chatkit"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/saleszera/ruby-chatkit"
+  spec.metadata["changelog_uri"] = "https://github.com/saleszera/ruby-chatkit/blob/main/CHANGELOG.md"
   spec.metadata["rubygems_mfa_required"] = "true"
 
   # Specify which files should be added to the gem when it is released.
