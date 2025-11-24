@@ -10,7 +10,6 @@ require "pry"
 loader = Zeitwerk::Loader.for_gem
 loader.ignore("#{__dir__}/ruby")
 loader.inflector.inflect "chatkit" => "ChatKit"
-loader.inflector.inflect "chatkit_error" => "ChatKitError"
 loader.inflector.inflect "chatkit_configuration" => "ChatKitConfiguration"
 loader.enable_reloading
 loader.setup

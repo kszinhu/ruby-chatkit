@@ -558,7 +558,7 @@ RSpec.describe ChatKit::Session do
         end.not_to raise_error
       end
 
-      it "raises ChatKitError for error responses" do
+      it "raises SessionError for error responses" do
         response_double = instance_double(
           HTTP::Response,
           code: 400,
@@ -567,7 +567,7 @@ RSpec.describe ChatKit::Session do
 
         expect do
           session.send(:handle_response_errors, response_double)
-        end.to raise_error(ChatKit::Error, /400: Bad Request/)
+        end.to raise_error(ChatKit::SessionError, /400: Bad Request/)
       end
     end
   end

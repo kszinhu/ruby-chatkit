@@ -21,29 +21,29 @@ module ChatKit
       ENABLED = true
     end
 
-    # @!attribute [r] client
-    #  @return [Ruby::ChatKit::Client] The ChatKit client instance.
-    attr_accessor :client
-
-    # @!attribute [r] user_id
+    # @!attribute [rw] user_id
     #  @return [String] The ID of the user.
     attr_accessor :user_id
 
-    # @!attribute [r] workflow
+    # @!attribute [rw] workflow
     #  @return [Workflow] The workflow for the session.
     attr_accessor :workflow
 
-    # @!attribute [r] chatkit_configuration
+    # @!attribute [rw] chatkit_configuration
     #  @return [ChatKitConfiguration] The ChatKit configuration.
     attr_accessor :chatkit_configuration
 
-    # @!attribute [r] expires_after
+    # @!attribute [rw] expires_after
     #  @return [ExpiresAfter] The expiration time for the session.
     attr_accessor :expires_after
 
-    # @!attribute [r] rate_limits
+    # @!attribute [rw] rate_limits
     #  @return [RateLimits] The rate limits for the session.
     attr_accessor :rate_limits
+
+    # @!attribute [rw] response
+    #  @return [Response] The session response data.
+    attr_accessor :response
 
     # @param workflow [Hash] The ID of the session.
     # @param user_id [String] The ID of the user.
@@ -95,9 +95,15 @@ module ChatKit
 
       handle_response_errors(response)
 
-      session_response = parse_response(response)
+      @response = parse_response(response)
 
-      update_current_session(session_response)
+      self
+    rescue StandardError => e
+      raise SessionError, "Session creation failed: #{e.message}"
+    end
+
+    def refresh!
+      create!
     end
 
   private
@@ -124,12 +130,17 @@ module ChatKit
     # Handles HTTP response errors by raising appropriate exceptions.
     #
     # @param response [Net::HTTPResponse] The HTTP response to check.
-    # @raise [ChatKitError] If the response indicates an error.
+    # @raise [SessionError] If the response indicates an error.
     def handle_response_errors(response)
       return unless response.code >= 300
 
-      error_class = ChatKitError.set_error("Session", "Session creation failed with status #{response.code}")
-      raise error_class, "#{response.code}: #{response.body}"
+      error_message = begin
+        response.parse["error"]["message"]
+      rescue StandardError
+        "Unknown error occurred"
+      end
+
+      raise SessionError, error_message
     end
 
     # Parses the HTTP response body.

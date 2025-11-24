@@ -39,5 +39,4 @@ RSpec/MultipleMemoizedHelpers:
 RSpec/SpecFilePathFormat:
   CustomTransform:
     ChatKit: chatkit
-    ChatKitError: chatkit_error
     ChatKitConfiguration: chatkit_configuration
