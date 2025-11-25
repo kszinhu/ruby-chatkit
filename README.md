@@ -9,6 +9,7 @@ A Ruby client library for [OpenAI's ChatKit API](https://platform.openai.com/doc
 - [Usage](#usage)
   - [Configuration](#configuration)
   - [Quick Start](#quick-start)
+  - [Debugging with Logger](#debugging-with-logger)
   - [Sending Messages with File Attachments](#sending-messages-with-file-attachments)
   - [Advanced Session Configuration](#advanced-session-configuration)
   - [Manual Session and Conversation Management](#manual-session-and-conversation-management)
@@ -25,6 +26,7 @@ A Ruby client library for [OpenAI's ChatKit API](https://platform.openai.com/doc
 - 📎 File upload support with message attachments
 - 🔄 Streaming response parsing
 - ⚡ Built-in error handling
+- 📝 Optional logging for debugging HTTP requests and streams
 
 ## Installation
 
@@ -79,6 +81,28 @@ client.create_session!(
 # Send a message
 response = client.send_message!(text: "Hello, how are you?")
 puts response.text
+```
+
+### Debugging with Logger
+
+Enable logging to debug HTTP requests, responses, and streaming data:
+
+```ruby
+# Initialize client with logger
+logger = Logger.new(STDOUT)
+client = ChatKit::Client.new(logger: logger)
+
+# Create session and send messages - all requests will be logged
+client.create_session!(
+  user_id: "user_123",
+  workflow_id: "wf_your_workflow_id"
+)
+
+response = client.send_message!(text: "Hello, how are you?")
+# Logs will show:
+# - HTTP method and URI
+# - Response status codes
+# - Stream chunks (debug level)
 ```
 
 ### Sending Messages with File Attachments
