@@ -54,21 +54,23 @@ module ChatKit
     # @param thread_id [String, nil] - optional - The ID of the thread to continue.
     # @param attachments [Array<String>] The attachments to include in the message.
     # @param client [ChatKit::Client] The ChatKit client instance.
-    def initialize(client_secret:, text:, attachments: nil, client: Client.new)
+    def initialize(client_secret:, text:, attachments: nil, client: Client.new, logger: nil)
       @client = client
       @client_secret = client_secret
       @text = text
       @attachments = attachments
       @response = Response.new
+      @logger = logger
     end
 
     class << self
-      def send_message!(client_secret:, text:, attachments: nil, client: Client.new)
+      def send_message!(client_secret:, text:, attachments: nil, client: Client.new, logger: nil)
         new(
           client_secret:,
           text:,
           attachments:,
-          client:
+          client:,
+          logger:
         ).perform_request!
       end
     end
@@ -119,7 +121,7 @@ module ChatKit
     # @yield [chunk] Yields each chunk of the stream.
     #  @return [void]
     def stream!(result, &)
-      Stream.new(result).stream!(&)
+      Stream.new(result, @logger).stream!(&)
     end
 
     # Returns the conversation endpoint URL.

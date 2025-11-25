@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "logger"
 require "uri"
 require "http"
 require "event_stream_parser"

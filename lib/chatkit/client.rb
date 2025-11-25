@@ -21,16 +21,19 @@ module ChatKit
 
     # @param api_key [String, nil] - optional - The API key for authenticating requests.
     # @param host [String] - optional - The host URL for the ChatKit service.
-    def initialize(api_key: ChatKit.configuration.api_key, host: ChatKit.configuration.host)
+    # @param logger [Logger, nil] - optional - The logger instance.
+    def initialize(api_key: ChatKit.configuration.api_key, host: ChatKit.configuration.host, logger: nil)
       @api_key = api_key
       @host = host
       @current_session = nil
+      @logger = logger
     end
 
     # @return [Net::HTTP]
     def connection
       @connection ||= begin
         http = HTTP.persistent(@host)
+        http = http.use(instrumentation: { instrumenter: Instrumentation.new(@logger) }) if @logger
         http = http.auth("Bearer #{@api_key}") if @api_key
 
         http
@@ -74,7 +77,8 @@ module ChatKit
         client_secret:,
         text:,
         attachments:,
-        client:
+        client:,
+        logger: @logger
       )
 
       conversation.response.answer
